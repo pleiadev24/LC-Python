@@ -1,0 +1,20 @@
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        result = 0
+        
+        for num in nums:
+            result ^= num  # XOR operation
+            
+        return result
+
+The key property of XOR is that it returns 1 for bits that are different and 0 for 
+bits that are the same. 
+If you XOR a number with itself, the result is 0. 
+If you XOR all the numbers in the array, the duplicate numbers will cancel each other out, leaving only the single number.
+In this solution, the result variable is initialized to 0. Then, for each element in the array, it is XORed with the current result. 
+The final result will be the number that appears only once in the array. 
+Rutime Complexity is Linear
